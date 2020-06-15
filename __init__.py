@@ -53,6 +53,11 @@ class MockBackendSkill(MycroftSkill):
                 "mimic2": {
                     "url": "https://mimic-api.mycroft.ai/synthesize?text="
                 }
+            },
+            "listener": {
+                "wake_word_upload": {
+                    "url": "https://training.mycroft.ai/precise/upload"
+                }
             }
         }
         update_mycroft_config(config)
@@ -63,7 +68,8 @@ class MockBackendSkill(MycroftSkill):
     def enable_mock(self, send_event=True):
         url = "http://0.0.0.0:{p}".format(p=CONFIGURATION["backend_port"])
         version = CONFIGURATION["api_version"]
-        mimic_url = "http://0.0.0.0:{p}/synthesize/mimic2/kusal/en?text=".format(p=CONFIGURATION["backend_port"])
+        mimic_url = "http://0.0.0.0:{p}/synthesize/mimic2/kusal/en?text=".format(
+            p=CONFIGURATION["backend_port"])
         config = {
             "server": {
                 "url": url,
@@ -72,6 +78,12 @@ class MockBackendSkill(MycroftSkill):
             "tts": {
                 "mimic2": {
                     "url": mimic_url
+                }
+            },
+            "listener": {
+                "wake_word_upload": {
+                    "url": "http://0.0.0.0:{p}/precise/upload".format(
+                        p=CONFIGURATION["backend_port"])
                 }
             }
         }
@@ -120,5 +132,3 @@ class MockBackendSkill(MycroftSkill):
 
 def create_skill():
     return MockBackendSkill()
-
-

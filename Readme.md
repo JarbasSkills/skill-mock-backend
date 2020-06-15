@@ -15,11 +15,12 @@ PRIVACY NOTE: you need to setup your own STT, by default it will use google
 
 This is beta, some skills WILL break, you will lose:
 
-- web settings
+- web skill settings interface
+- web device configuration interface
 - wolfram alpha proxy 
 - open weather map proxy 
 - geolocation api
-
+- send emails functionality (unless configured in mock_backend.conf)
 
 
 ## Configuration
@@ -37,13 +38,10 @@ see [OpenJarbas/mock-backend](https://github.com/OpenJarbas/mock-backend) for de
         "module": "google"
     },
     "backend_port": 6712,
-    "ssl": false,
-    "ssl_cert": null,
-    "ssl_key": null,
+   
     "mail_user": "xxx@gmail.com",
     "mail_password": "xxx",
-    "mail_server": "smtp.googlemail.com",
-    "mail_port": 465,
+    
     "default_location": {
         "city": {
             "code": "Lawrence",
@@ -70,9 +68,6 @@ see [OpenJarbas/mock-backend](https://github.com/OpenJarbas/mock-backend) for de
     },
     "geolocate": false,
     "override_location": false,
-    "data_dir": "/home/user/.mycroft/mock_backend",
-    "metrics_db": "/home/user/.mycroft/mock_backend/metrics.json",
-    "api_version": "v1",
     "email": "xxx@gmail.com"
 }
 ```
