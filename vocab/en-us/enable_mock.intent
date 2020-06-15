@@ -1,0 +1,6 @@
+do not phone home
+enable mock backend
+disable mycroft backend
+disable home dot mycroft dot ai
+disable selene backend
+enable fake backend
