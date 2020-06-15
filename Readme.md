@@ -13,9 +13,18 @@ PRIVACY NOTE: you need to setup your own STT, by default it will use google
 
 [kaldi](https://github.com/HelloChatterbox/speech2text/blob/dev/speech2text/engines/kaldi.py) and [deepspeech](https://github.com/HelloChatterbox/speech2text/blob/dev/speech2text/engines/ds.py) are supported
 
+This is beta, some skills WILL break, you will lose:
+
+- web settings
+- wolfram alpha proxy 
+- open weather map proxy 
+- geolocation api
+
+
+
 ## Configuration
 
-configure backend by editing/creating ~/.mycroft/mock_backend/mock_backend.conf
+configure backend by editing/creating ```~/.mycroft/mock_backend/mock_backend.conf```
 
 restarting mycroft is needed after editing this file
 
