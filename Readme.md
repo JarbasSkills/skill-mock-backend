@@ -19,6 +19,8 @@ configure backend by editing/creating ~/.mycroft/mock_backend/mock_backend.conf
 
 restarting mycroft is needed after editing this file
 
+see [OpenJarbas/mock-backend](https://github.com/OpenJarbas/mock-backend) for details
+
 ```json
 {
     "lang": "en-us",
