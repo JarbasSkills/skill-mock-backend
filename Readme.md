@@ -15,7 +15,7 @@ PRIVACY NOTE: you need to setup your own STT, by default it will use google
 
 ## Configuration
 
-configure backend by editing/creating ~/.mycroft/mock_backend/mock_backend.conf
+configure backend by editing/creating ```~/.mycroft/mock_backend/mock_backend.conf```
 
 restarting mycroft is needed after editing this file
 
