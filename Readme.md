@@ -33,7 +33,6 @@ see [OpenJarbas/mock-backend](https://github.com/OpenJarbas/mock-backend) for de
 
 ```json
 {
-    "lang": "en-us",
     "stt": {
         "module": "google"
     },
