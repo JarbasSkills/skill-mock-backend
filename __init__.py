@@ -103,6 +103,7 @@ class MockBackendSkill(MycroftSkill):
             self.speak_dialog("need_reboot")
         else:
             self.speak_dialog("mycroft_backend")
+        self.gui.show_image(join(dirname(__file__), "ui", "mycroft.png"))
 
     @intent_file_handler("enable_mock.intent")
     def handle_enable_mock(self, message):
@@ -114,14 +115,16 @@ class MockBackendSkill(MycroftSkill):
             self.speak_dialog("need_reboot")
         else:
             self.speak_dialog("mock_backend", wait=True)
-        self.gui.show_image(join(dirname(__file__), "logo.png"))
+        self.gui.show_image(join(dirname(__file__), "ui", "mock.png"))
 
     @intent_file_handler("current_backend.intent")
     def handle_current_backend(self, message):
         if self.settings["use_mock"]:
             self.speak_dialog("mock_backend")
+            self.gui.show_image(join(dirname(__file__), "ui", "mock.png"))
         else:
             self.speak_dialog("mycroft_backend")
+            self.gui.show_image(join(dirname(__file__), "ui", "mycroft.png"))
 
     # shutdown
     def shutdown(self):
