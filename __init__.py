@@ -110,11 +110,11 @@ class MockBackendSkill(MycroftSkill):
             self.gui["use_mock"] = True
             self.settings["use_mock"] = True
             self.enable_mock()
-            self.gui.show_image(join(dirname(__file__), "logo.png"))
             self.speak_dialog("mock_backend", wait=True)
             self.speak_dialog("need_reboot")
         else:
             self.speak_dialog("mock_backend", wait=True)
+        self.gui.show_image(join(dirname(__file__), "logo.png"))
 
     @intent_file_handler("current_backend.intent")
     def handle_current_backend(self, message):
