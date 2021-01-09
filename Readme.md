@@ -1,8 +1,8 @@
 # Mock Backend Skill
 
-![](./logo.png)
-
 Disable mycroft from phoning home.mycroft.ai
+
+![](./logo.png)
 
 
 ## About

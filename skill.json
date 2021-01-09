@@ -1,23 +1,47 @@
 {
-  "name": "Mock Backend Skill",
-  "skillname": "skill-mock-backend",
   "authorname": "JarbasSkills",
-  "foldername": "",
+  "foldername": "skill-mock-backend",
   "url": "https://github.com/JarbasSkills/skill-mock-backend",
-  "branch": "master",
+  "branch": "v0.2",
+  "license": "apache-2.0",
+  "tags": [
+    "privacy",
+    "configuration",
+    "backend",
+    "permissive-license"
+  ],
+  "skillname": "skill-mock-backend",
+  "description": "Just install the skill and backend will be disabled\n\nThis is beta, some skills WILL break, see [OpenVoiceOS/OVOS-local-backend](https://github.com/OpenVoiceOS/OVOS-local-backend) for details\n\nPRIVACY NOTE: you need to setup your own STT, by default it will use google\n\n[kaldi](https://github.com/HelloChatterbox/speech2text/blob/dev/speech2text/engines/kaldi.py) and [deepspeech](https://github.com/HelloChatterbox/speech2text/blob/dev/speech2text/engines/ds.py) are supported",
+  "short_description": "Disable mycroft from phoning home.mycroft.ai",
+  "examples": [
+    "disable mycroft backend",
+    "what backend are you using",
+    "restore mycroft backend"
+  ],
+  "credits": [
+    "JarbasAl"
+  ],
+  "category": "configuration",
+  "categories": [
+    "configuration"
+  ],
+  "logo": "https://raw.githubusercontent.com/JarbasSkills/skill-mock-backend/master/logo.png",
+  "requirements": {
+    "python": [
+      "ovos_utils>=0.5.0",
+      "ovos-local-backend>=0.1.0",
+      "mock-mycroft-backend>=0.2.2"
+    ],
+    "skill": [],
+    "system": {}
+  },
   "desktopFile": false,
-  "warning": "",
-  "systemDeps": false,
+  "name": "Mock Backend Skill",
   "platforms": [
     "arm",
     "arm64",
     "i386",
     "x86_64",
     "ia64"
-  ],
-  "examples": [
-    "restore mycroft backend",
-    "disable mycroft backend",
-    "what backend are you using"
   ]
 }
