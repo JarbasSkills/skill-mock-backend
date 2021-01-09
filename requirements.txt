@@ -1,2 +1,2 @@
-mock-mycroft-backend>=0.2.2
-jarbas_utils
+ovos-local-backend
+ovos_utils

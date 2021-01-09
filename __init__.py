@@ -1,9 +1,9 @@
 from os.path import basename, dirname, join
 from mycroft.skills.core import intent_file_handler, MycroftSkill
-from mock_mycroft_backend import start_backend
-from mock_mycroft_backend.configuration import CONFIGURATION
+from ovos_local_backend import start_backend
+from ovos_local_backend.configuration import CONFIGURATION
 from mycroft.util import create_daemon
-from jarbas_utils.configuration import update_mycroft_config
+from ovos_utils.configuration import update_mycroft_config
 from mycroft.messagebus.message import Message
 
 
@@ -21,10 +21,13 @@ class MockBackendSkill(MycroftSkill):
         self.make_priority(False)
 
     def initialize(self):
+        # if backend is running locally this will fail
+        # dont care about error handling, i am assuming user is running
+        # backend directly and just using skill for intent control
         self.backend = create_daemon(start_backend)
 
     def get_intro_message(self):
-        # welcome dialog on skill install
+        # welcome locale on skill install
         self.speak_dialog("intro", {"skill_name": self.skill_name}, wait=True)
         self.speak_dialog("need_reboot")
 
