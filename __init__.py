@@ -2,7 +2,8 @@ from os.path import basename, dirname, join
 from mycroft.skills.core import intent_file_handler, MycroftSkill
 from ovos_local_backend import start_backend
 from ovos_local_backend.configuration import CONFIGURATION
-from mycroft.util import create_daemon
+from ovos_utils import create_daemon
+from ovos_utils.skills import make_priority_skill
 from ovos_utils.configuration import update_mycroft_config
 from mycroft.messagebus.message import Message
 
@@ -18,9 +19,9 @@ class MockBackendSkill(MycroftSkill):
             self.settings["use_mock"] = True
             self.enable_mock(False)
         self.backend = None
-        self.make_priority(False)
 
     def initialize(self):
+        make_priority_skill(self.skill_id)
         # if backend is running locally this will fail
         # dont care about error handling, i am assuming user is running
         # backend directly and just using skill for intent control
@@ -32,20 +33,6 @@ class MockBackendSkill(MycroftSkill):
         self.speak_dialog("need_reboot")
 
     # config
-    def make_priority(self, send_event=True):
-        skill_folder = basename(dirname(__file__))
-        priority_skills = self.config_core["skills"]["priority_skills"]
-        if skill_folder not in priority_skills:
-            priority_skills.append(skill_folder)
-            config = {
-                "skills": {
-                    "priority_skills": priority_skills
-                }
-            }
-            update_mycroft_config(config)
-            if send_event:
-                self.bus.emit(Message("configuration.updated"))
-
     def enable_mycroft(self, send_event=True):
         config = {
             "server": {

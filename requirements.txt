@@ -1,2 +1,2 @@
-ovos-local-backend
-ovos_utils
+ovos-local-backend>=0.1.0
+ovos_utils>=0.5.0
